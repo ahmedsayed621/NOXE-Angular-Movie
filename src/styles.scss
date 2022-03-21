@@ -1,43 +1,38 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@200&display=swap');
+
 
 $bgColor:#131722;
-$lightbgColor:#24baef;
-$bgTransparent:rgba(36,186,239,.6);
+$lightBgColor:#24baef;
+$bgTransparent:rgba(36,186,239,.6) ;
 $fontColor:#fff;
 $borderColor:#a8a8a83d;
 $borderHeight:1px;
-$secondfontColor:#949cb0;
+$secondFontColor:#949cb0;
 
-
-body{
-    font-family: 'Montserrat', sans-serif;
+body
+{
     background-color: $bgColor;
-    color: $fontColor;
+    color:$fontColor;
+    font-family: 'Montserrat Alternates', sans-serif;
 }
 
-a{
-    font-size: 18px;
-    color: $fontColor;
-    text-decoration: none;
-}
-a:hover{
-    font-size: 18px;
-    color: $fontColor;
-    text-decoration: none;
+
+.brd
+{
+    height: $borderHeight;
+    background-color: $borderColor ;
 }
 
-.social-media{
-    margin-right: 10px;
-
+.vote
+{
+    top:0;
+    right: 0;
+    background-color: $lightBgColor;
 }
 
-.social-media i{
-    font-size: 25px;
-    padding: 5px;
-}
-
-.navbar-brand{
-    font-weight: 900;
-    
+.test
+{
+    color: white !important;
 }

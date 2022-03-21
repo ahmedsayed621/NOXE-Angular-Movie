@@ -1,1 +1,36 @@
-<p>login works!</p>
+
+
+<div *ngIf="error" class="alert alert-danger">{{error}}</div>
+
+
+<form [formGroup] = "loginForm" (ngSubmit)="sendLogin(loginForm)" >
+
+    <div class="form-group">
+        <label >Email</label>
+        <input formControlName = "email" class="form-control">
+
+        <div *ngIf="loginForm.get('email')?.errors && loginForm.get('email')?.touched " class="alert alert-danger">
+
+            <p *ngIf="loginForm.get('email')?.errors?.required">required Field</p>
+            <p *ngIf="loginForm.get('email')?.errors?.email">please enter valid email</p>
+
+        </div>
+    </div>
+    <div class="form-group">
+        <label >password</label>
+        <input formControlName = "password" class="form-control">
+
+        <div *ngIf="loginForm.get('password')?.errors && loginForm.get('password')?.touched " class="alert alert-danger">
+
+            <p *ngIf="loginForm.get('password')?.errors?.required">required Field</p>
+            <p *ngIf="loginForm.get('password')?.errors?.pattern">please enter valid password</p>
+
+        </div>
+    </div>
+  
+    
+    <button [disabled]="loginForm.invalid" type="submit" class="btn btn-info float-right">Login</button>
+
+
+</form>
+

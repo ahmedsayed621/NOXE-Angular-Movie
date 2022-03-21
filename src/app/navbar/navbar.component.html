@@ -1,57 +1,49 @@
-<nav class="navbar navbar-expand-lg  ">
-    <a class="navbar-brand" href="#">NOXE</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" routerLink="home">Home <span class="sr-only">(current)</span></a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="about">About</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" routerLink="tv">Tv Show</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="movies">Movies</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="network">Network</a>
-          </li>
 
-          <li class="nav-item">
-            <a class="nav-link" routerLink="people">People</a>
-          </li>
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+    <a class="navbar-brand navbarBrand" href="#">Noxe</a>
+    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+        aria-expanded="false" aria-label="Toggle navigation"></button>
+    <div class="collapse navbar-collapse" id="collapsibleNavId">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+           
+            <li class="nav-item">
+                <a *ngIf="isLogin" class="nav-link" routerLink="home" routerLinkActive="test">Home</a>
+            </li>
+            <li class="nav-item">
+                <a *ngIf="isLogin" class="nav-link"  routerLink="movie" routerLinkActive="test">Movies</a>
+            </li>
+            <li class="nav-item">
+                <a *ngIf="isLogin" class="nav-link"  routerLink="tv" routerLinkActive="test">TVShow</a>
+            </li>
 
+            <li class="nav-item">
+                <a *ngIf="isLogin" class="nav-link"   routerLink="about" routerLinkActive="test">About</a>
+            </li>
+            <li class="nav-item">
+                <a *ngIf="isLogin" class="nav-link"  routerLink="network" routerLinkActive="test" >Networks</a>
+            </li>
 
-      </ul>
+            
 
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      </form>
-      <div class="social-media">
-        <i class="fab fa-facebook"></i>
-        <i class="fab fa-spotify"></i>
-        <i class="fab fa-instagram"></i>
-        <i class="fab fa-youtube"></i>
-      </div>
+           
+        </ul>
+        <div class="form-inline ml-auto my-2 my-lg-0">
+            
+            <i class="fab fa-facebook text-white px-2"></i>
+            <i class="fab fa-twitter text-white px-2"></i>
+            <i class="fab fa-instagram text-white px-2"></i>
 
-      <ul class="navbar-nav mx-3">
-        <li class="nav-item">
-            <a class="nav-link" routerLink="login">Login</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" routerLink="register">Register</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" routerLink="">Logout</a>
-        </li>
-
-      </ul>
-    
-
+           
+                <a  *ngIf="!isLogin" class="nav-link"  routerLink="register" routerLinkActive="test" >Register</a>
+                <a   *ngIf="!isLogin" class="nav-link"  routerLink="login" routerLinkActive="test" >Login</a>
+                <a   *ngIf="isLogin" class="nav-link" (click)="logout()" >Logout</a>
+            
+       
+        </div>
     </div>
-  </nav>
+</nav>
+
+
+
+
+

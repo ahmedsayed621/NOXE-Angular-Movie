@@ -1,1 +1,67 @@
-<p>home works!</p>
+
+
+<input [(ngModel)]="searcWord" class="from-control w-25 mx-auto my-5">
+
+<div class="row">
+
+    <div class="col-md-4 mt-5">
+
+        <div class="brd w-25 mb-3"></div>
+
+        <h3>Trending <br> movies <br> to watch now</h3>
+
+        <p>most watched movies by day</p>
+
+        <div class="brd w-100 mt-3"></div>
+
+
+    </div>
+
+    <div *ngFor="let movie of moviesData | moviesearch :searcWord" class="col-md-2 py-2">
+
+       <div [routerLink]="['/moviedetails' ,movie.id ]" class="position-relative">
+            <img class="img-fluid" [src]="imgPath+movie.poster_path">
+            <h4 class="h5">  {{movie.title | uppercase }}   </h4>
+
+            <span class="position-absolute vote p-1">{{movie.vote_average}}</span>
+       </div>
+
+    </div>
+
+</div>
+
+
+<div class="row mt-5">
+
+    <div class="col-md-4 mt-5">
+
+        <div class="brd w-25 mb-3"></div>
+
+        <h3>Trending <br> tv <br> to watch now</h3>
+
+        <p>most watched movies by day</p>
+
+        <div class="brd w-100 mt-3"></div>
+
+
+    </div>
+
+    <div *ngFor="let tv of tvData" class="col-md-2 py-2">
+
+       <div class="position-relative">
+            <img class="img-fluid" [src]="imgPath+tv.poster_path">
+            <h4 class="h5">  {{tv.title}}   </h4>
+
+            <span class="position-absolute vote p-1">{{tv.vote_average}}</span>
+       </div>
+
+    </div>
+
+</div>
+
+
+
+
+
+
+

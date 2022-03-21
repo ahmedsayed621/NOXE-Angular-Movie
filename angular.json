@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "NOXE": {
+    "moviePro": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/NOXE",
+            "outputPath": "dist/moviePro",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -30,19 +30,13 @@
               "src/favicon.ico",
               "src/assets"
             ],
-            "styles": [
+            "styles": ["node_modules/bootstrap/scss/bootstrap.scss",
               "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
-              "node_modules/bootstrap/scss/bootstrap.scss",
-
-              "src/styles.scss"
+              "src/styles.scss" 
             ],
-            "scripts": [
-              "node_modules/jquery/dist/jquery.min.js",
+            "scripts": ["node_modules/jquery/dist/jquery.min.js",
               "node_modules/popper.js/dist/umd/popper.min.js",
               "node_modules/bootstrap/dist/js/bootstrap.min.js"
-
-
-
             ]
           },
           "configurations": {
@@ -82,10 +76,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "NOXE:build:production"
+              "browserTarget": "moviePro:build:production"
             },
             "development": {
-              "browserTarget": "NOXE:build:development"
+              "browserTarget": "moviePro:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -93,7 +87,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "NOXE:build"
+            "browserTarget": "moviePro:build"
           }
         },
         "test": {
@@ -117,5 +111,5 @@
       }
     }
   },
-  "defaultProject": "NOXE"
+  "defaultProject": "moviePro"
 }
