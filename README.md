@@ -1,4 +1,5 @@
 # MoviePro
+<img href="[png1](https://github.com/ahmedsayed621/NOXE-Angular-Movie/blob/master/movieDetails.png)">
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.0.0.
 
